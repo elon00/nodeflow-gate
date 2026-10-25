@@ -1,31 +1,24 @@
-﻿# Nodeflow Gate (ticker)
-> Autonomous Production-Grade Protocol
+# Nodeflow Gate — Local Diagnostic (NOT production ready)
 
-[![CI/CD Pipeline](https://github.com/elon00/nodeflow-gate/actions/workflows/ci-cd-pipeline.yml/badge.svg)](https://github.com/elon00/nodeflow-gate/actions)
-[![Score](https://img.shields.io/badge/Reality%20Gates-100%2F100%20GENUINE%20GREEN-2ea44f?style=flat-square)](#reality-check-verification)
-[![NIST PQC](https://img.shields.io/badge/Security-NIST%20FIPS%20203%20%26%20204-blue?style=flat-square)](#security)
-[![Verified](https://img.shields.io/badge/Status-100%25%20Verified-gold?style=flat-square)](#pillars)
+**Status:** Placeholder Rust executable with a deterministic local state diagnostic. No validator orchestration, remote RPC, cryptographic verification, escrow, governance, x402 settlement, or deployment functionality has been independently implemented or accepted here.
 
----
+The previous "100/100", FIPS, connected-RPC and production claims were unsupported and have been withdrawn. The integer mixing function is **not cryptography** and is not a Conway automaton.
 
-## About Nodeflow Gate
-**Nodeflow Gate (\ticker)** is an autonomous, decentralized, post-quantum intelligence protocol engineered for production-grade operational efficiency and cryptographic trust.
+## Reproduce the limited tests
 
----
+```bash
+cargo test --all-targets
+python -m compileall -q tests
+python -m unittest discover -s tests -p 'reality_*.py' -v
+```
 
-## Running the Protocol Locally
+The Python regression suite runs the **actual local Rust binary** and compares its output against an independent reference calculation. A green workflow would prove only those narrow diagnostic checks, not the missing protocol implementation or production readiness.
 
-### 1. Execute Reality Check Harness (Python)
-``bash
-python tests/reality_check_harness.py
-``
+## Open acceptance gates
 
-### 2. Run the High-Performance Rust State Engine
-``bash
-cargo run
-``
+1. Implement and test actual validator orchestration against documented APIs with no mock success claims.
+2. Add authenticated RPC integration, adversarial failure tests, and key lifecycle evidence before any network use.
+3. Require independent security review, dependency audit, deployment controls and explicit release approval.
+4. Resolve the approved-manifest private vs. actual-public repository visibility mismatch with the owner; do not change visibility automatically.
 
----
-
-## Reality Check Verification
-Nodeflow Gate enforces strict pre-deployment verification: all invariants, cryptographic proofs, and micro-escrow contracts must achieve a **100/100 Genuine Green** rating before mainnet settlement.
+No gas, cycles, paid cloud resources, secrets, or public testnet/mainnet deployment are required for these checks.
